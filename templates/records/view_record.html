@@ -1,0 +1,19 @@
+{% comment %} 
+{% block content %}
+  <h2>Medical Records</h2>
+  <ul>
+    {% for record in records %}
+      <li>
+        <strong>{{ record.patient.username }}</strong> - 
+        <a href="{{ record.file.url }}" target="_blank">View</a> -
+        {{ record.description }} (Uploaded: {{ record.uploaded_at|date:"Y-m-d H:i" }})
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %} {% endcomment %}
+<h2>Record Details</h2>
+<p><strong>Patient Name:</strong> {{ record.0 }}</p>
+<p><strong>Diagnosis:</strong> {{ record.1 }}</p>
+<p><strong>Treatment:</strong> {{ record.2 }}</p>
+<p><strong>IPFS Hash:</strong> <a href="https://ipfs.io/ipfs/{{ record.3 }}">{{ record.3 }}</a></p>
+<p><strong>Timestamp:</strong> {{ record.4 }}</p>

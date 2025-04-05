@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Claim #{{ claim.id }} Details</h2>
+  <p><strong>Hospital:</strong> {{ claim.hospital_name }}</p>
+  <p><strong>Treatment:</strong> {{ claim.treatment_details }}</p>
+  <p><strong>Status:</strong> {{ claim.status }}</p>
+  <p><strong>Document:</strong> <a href="{{ claim.document.url }}">Download</a></p>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>My Claims</h2>
+  <ul>
+    {% for claim in claims %}
+      <li>
+        <a href="{% url 'claim_detail' claim.id %}">Claim #{{ claim.id }}</a> - {{ claim.status }}
+      </li>
+    {% endfor %}
+  </ul>
+  <p><a href="{% url 'submit_claim' %}">Submit New Claim</a></p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Claim Analysis</h2>
+
+<p><strong>Claim #{{ claim.id }}</strong> - {{ claim.claimant.username }}</p>
+<p><strong>Hospital:</strong> {{ claim.hospital_name }}</p>
+<p><strong>Treatment:</strong> {{ claim.treatment_details }}</p>
+<hr>
+<h3>AI Fraud Score: {{ analysis.fraud_score }}</h3>
+<p><strong>Reason:</strong> {{ analysis.ai_feedback }}</p>
+<a href="{% url 'admin:index' %}">Back to Admin</a>
+{% endblock %}
